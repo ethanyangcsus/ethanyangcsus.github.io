@@ -13,7 +13,7 @@
       background: #000;
       padding: 20px;
       margin: 20px 0;
-      color: red;
+      color: cyan;
       display: block;
       fonnt: 48px monospace;
     }
@@ -33,28 +33,35 @@
   </ul>
 
 
-    <script src="script.js">
-  const h1 = document.getElementsByTagName('h1')[0];
-  const p = document.getElementsByTagName('p')[0];
-  const ul = document.getElementsByTagName('ul')[0];
-
-  var intervalID;
-
-  function showTime() {
-    var d = new Date();
-    document.getElementById("clock").innerHTML = d.toLocaleTimeString();
-  }
-
-  function stopClock() {
-    clearInterval(intervalID);
-  }
-
-  var intervalID = setInterval(showTime, 1000);
-
+    <style>
+        #clock{
+            background: #300;
+            padding: 10px;
+            margin: 10px 0;
+            color: white;
+            display: block;
+            font: 24px monospace;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    var intervalID;
+     
+    function showTime() {
+        var d = new Date();
+        document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+    }
+     
+    function stopClock() {
+        clearInterval(intervalID);
+    }
+     
+    var intervalID = setInterval(showTime, 1000);
     </script>
-    
+     <fieldset>
     <p><span id="clock"></span></p>
-
     <button onclick="stopClock();">Stop Clock</button>
+    </fieldset>
   </body>
 </html>
